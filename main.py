@@ -1,4 +1,5 @@
 import random
+from colorama import Fore,Back,Style
 
 cls = lambda: print('\n'*100)
 
@@ -16,7 +17,7 @@ def  fill_array(s,x,y):
 def print_array(a):
     for i in range(len(a)):
         for j in range(len(a[i])):
-            print(a[i][j],end=' ')
+            print( a[i][j],end=' ')
         print()
 
 
@@ -37,8 +38,11 @@ def read():
 
 
 #-------------------------------------------------------------
-array = (fill_array('*',5,5))
 
+
+print(Fore.RED)
+cls()
+array = (fill_array('*',5,5))
 
 print()
 i=100
@@ -61,10 +65,12 @@ print_array(array)
 
 while i >0:
     course=read()
+    print(Fore.GREEN)
     if (course==0)and(x<len(array)-1):
         x=x+1
         array[x][y]='@'
         array[x-1][y]='*'
+        print(Fore.WHITE)
         if (x==a)and(y==b)and(k==1):
             i=i+20
             k=-1
@@ -87,6 +93,7 @@ while i >0:
         x= x - 1
         array[x][y] = '@'
         array[x + 1][y] = '*'
+        print(Fore.MAGENTA)
         if (x==a)and(y==b)and(k==1):
             i=i+20
             k = -1
@@ -110,6 +117,7 @@ while i >0:
         y=y+1
         array[x][y]='@'
         array[x][y-1]='*'
+        print(Fore.BLUE)
         if (x==a)and(y==b)and(k==1):
             i=i+20
             k = -1
@@ -132,6 +140,7 @@ while i >0:
         y= y - 1
         array[x][y] = '@'
         array[x][y + 1] = '*'
+        print(Fore.LIGHTBLUE_EX)
         if (x==a)and(y==b)and(k==1):
             i=i+20
             k = -1
@@ -145,8 +154,10 @@ while i >0:
             array[c][d] = 'o'
         i = i - 5
         cls()
+        print(Fore.RED)
 
         print_array(array)
         print(i,'xp')
         print(rez)
 print('Game Over')
+input()
